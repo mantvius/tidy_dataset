@@ -48,7 +48,7 @@ melted_set <- melt(merged_all, id = c("Subject", "Activity"), measure.vars = nam
 tidy_dataset <- dcast(melted_set, Subject + Activity ~ variable, mean)
 
 # writing the created tidy data set into a text file
-write.table(tidy_dataset, "./tidy_dataset.txt")
+write.table(tidy_dataset, "./tidy_dataset.txt", row.name=FALSE)
 
 
 
