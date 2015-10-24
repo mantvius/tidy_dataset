@@ -23,14 +23,17 @@ y_train <- read.table("./train/y_train.txt")
 subject_train <- read.table("./train/subject_train.txt")
 ```
 
-# merging the training and test sets 
+Next, training and test sets are merged, the file with feature names is read and the variables are labeled with these names:
+```{r, eval = FALSE}
 merged_X <- rbind(X_test, X_train)
-
-# reading the file with feature names and labeling data with these names 
 feature_names <- read.table("./features.txt")
 colnames(merged_X) <- feature_names$V2
+```
 
-# Extracting only the measurements on the mean and standard deviation
+The labeling is performed before extracting a subset of the data for simplicity (no need to extract a subset of feature names)
+
+
+ Extracting only the measurements on the mean and standard deviation
 extracted <- merged_X[, grep("(mean|std)\\(", colnames(merged_X))]
 
 # merging subjects of train with subjects of test and activities of train with activities of test; labeling them
