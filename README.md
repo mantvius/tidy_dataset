@@ -5,40 +5,23 @@
 #        **R E A D M E**
 
 
-run_analysis.R is a script that creates a tidy data set from "Human Activity Recognition Using Smartphones Data Set".
-Written in R version 3.2.2 (2015-08-14) on Linux Xubuntu 14.04
+**run_analysis.R** is a script that creates a tidy data set from "Human Activity Recognition Using Smartphones Data Set". Written in R version 3.2.2 (2015-08-14) on Linux Xubuntu 14.04
 
 
-The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set".
-A full description is available at the site where the data was obtained: 
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
-
-The zip file with the source data can be retrieved at the following address:
+The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set". The zip file with the source data can be retrieved at the following address:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-To replicate the script for constructing the tidy dataset, the zip file needs to be downloaded
-and unpacked in the working directory. After that R script can be started.
+To replicate the script for constructing the tidy dataset, the zip file needs to be downloaded and unpacked in the working directory of R. After that R script can be started.
 
+The script starts by reading 6 original data files (the training and test sets together with respective subjects and activities) into R:
 ```{r, eval = FALSE}
-data <- read.table(file_path, header = TRUE) 
-View(data)
-```
-
-
-# Before starting the script, zip file with original data needs to be downloaded and unpacked.
-
-# ------------------------
-
-# setting the working directory to where the original data is unpacked.
-setwd("~/UCI HAR Dataset/")
-
-# reading the original data into R
 X_test <- read.table("./test/X_test.txt")
 y_test <- read.table("./test/y_test.txt")
 subject_test <- read.table("./test/subject_test.txt")
 X_train <- read.table("./train/X_train.txt")
 y_train <- read.table("./train/y_train.txt")
 subject_train <- read.table("./train/subject_train.txt")
+```
 
 # merging the training and test sets 
 merged_X <- rbind(X_test, X_train)
@@ -72,6 +55,11 @@ tidy_dataset <- dcast(melted_set, Subject + Activity ~ variable, mean)
 write.table(tidy_dataset, "./tidy_dataset.txt")
 
 
+
+```{r, eval = FALSE}
+data <- read.table(file_path, header = TRUE) 
+View(data)
+```
 
 
 
