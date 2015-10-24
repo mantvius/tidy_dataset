@@ -134,7 +134,7 @@ fBodyBodyGyroJerkMag-std()
 
 
 Notes: 
-- Features are normalized and bounded within [-1,1].
+- Features were normalized and bounded within [-1,1].
 
 License:
 
