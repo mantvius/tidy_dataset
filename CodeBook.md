@@ -1,7 +1,6 @@
-# A tidy dataset extracted from Human Activity Recognition Using Smartphones Dataset  
+## A tidy dataset extracted from Human Activity Recognition Using Smartphones Dataset  
 # **C O D E B O O K**  
 The tidy data set contains averages of 66 variables (listed and described below) for 30 subjects and 6 activities.  
-
 The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set".A full description is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
