@@ -5,27 +5,25 @@
 #        **R E A D M E**
 
 
-I was able to follow the README in the directory that explained what the analysis files did. 
+run_analysis.R is a script that creates a tidy data set from "Human Activity Recognition Using Smartphones Data Set".
+Written in R version 3.2.2 (2015-08-14) on Linux Xubuntu 14.04
 
 
-# The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set".
-# A full description is available at the site where the data was obtained: 
-# http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set".
+A full description is available at the site where the data was obtained: 
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-# The zip file with the source data can be retrieved at the following address:
-# https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+The zip file with the source data can be retrieved at the following address:
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-# To replicate the script for constructing the tidy dataset, the zip file needs to be downloaded
-# and unpacked in the working directory. After that R script can be started.
+To replicate the script for constructing the tidy dataset, the zip file needs to be downloaded
+and unpacked in the working directory. After that R script can be started.
 
+```{r, eval = FALSE}
+data <- read.table(file_path, header = TRUE) 
+View(data)
+```
 
-
-
-
-
-# This is a script that creates a tidy data set from "Human Activity Recognition Using Smartphones Data Set".
-# Written in R version 3.2.2 (2015-08-14) on Linux Xubuntu 14.04
-# More info is available in a README file, located at: https://github.com/mantvius/tidy_dataset
 
 # Before starting the script, zip file with original data needs to be downloaded and unpacked.
 
@@ -74,9 +72,7 @@ tidy_dataset <- dcast(melted_set, Subject + Activity ~ variable, mean)
 write.table(tidy_dataset, "./tidy_dataset.txt")
 
 
-```{r}
-summary(cars)
-```
 
 
 
+I was able to follow the README in the directory that explained what the analysis files did. 
