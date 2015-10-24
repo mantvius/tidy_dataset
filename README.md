@@ -69,21 +69,23 @@ At this point, a tidy data set is created:
 * each row contains a different observation
 * The variables are labeled with names from the original data. They are sufficiently readable, plus they are described and explained in the codebook.
 
-# creating a tidy data set with the average of each variable for each activity and each subject
+
+The last step is to create another tidy data set with the average of each variable (3-68) for each activity and each subject. For that a package "reshape2" is used.
+```{r, eval = FALSE}
 library(reshape2)
 melted_set <- melt(merged_all, id = c("Subject", "Activity"), measure.vars = names(merged_all)[3:68])
 tidy_dataset <- dcast(melted_set, Subject + Activity ~ variable, mean)
-
-# writing the created tidy data set into a text file
-write.table(tidy_dataset, "./tidy_dataset.txt")
-
-
-
+```
+The resulting tidy data set is outputted into a text file, and uploaded to Coursera submission webpage.
 ```{r, eval = FALSE}
-data <- read.table(file_path, header = TRUE) 
+write.table(tidy_dataset, "./tidy_dataset.txt")
+```
+
+The best way to view the the final tidy set is to read it back into R:
+```{r, eval = FALSE}
+address <- "https://s3.amazonaws.com/coursera-uploads/user-98713875ad60962294962533/975117/asst-3/1a1206807a4111e5bfa091dfd115a3ca.txt"
+address <- sub("^https", "http", address)
+data <- read.table(url(address), header = TRUE) 
 View(data)
 ```
 
-
-
-I was able to follow the README in the directory that explained what the analysis files did. 
