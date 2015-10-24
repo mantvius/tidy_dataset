@@ -16,14 +16,22 @@ To replicate the script for constructing the tidy dataset, the zip file needs to
 The script starts by reading 6 original data files (the training and test sets together with respective subjects and activities) into R:
 ```{r, eval = FALSE}
 X_test <- read.table("./test/X_test.txt")
-y_test <- read.table("./test/y_test.txt")
-subject_test <- read.table("./test/subject_test.txt")
 X_train <- read.table("./train/X_train.txt")
+y_test <- read.table("./test/y_test.txt")
 y_train <- read.table("./train/y_train.txt")
+subject_test <- read.table("./test/subject_test.txt")
 subject_train <- read.table("./train/subject_train.txt")
 ```
 
-Next, training and test sets are merged, the file with feature names is read and the variables are labeled with these names:
+Dimensions of the data are as follows:  
+X_test [2947 : 561]  
+X_train [7352 : 561]  
+y_test [2947 : 1]  
+y_train [7352 : 1]  
+subject_test [2947 : 1]  
+subject_train [7352 : 1]  
+
+It makes sense to first merge training and test sets. Which is being done, then the file with feature names is read and the variables are labeled with these names:
 ```{r, eval = FALSE}
 merged_X <- rbind(X_test, X_train)
 feature_names <- read.table("./features.txt")
@@ -45,14 +53,21 @@ colnames(merged_y) <- "Activity"
 colnames(merged_subject) <- "Subject"
 ```
 
-merging the extracted data set with their according subjects and activities:
+Now the extracted data set is merged with their according subjects and activities:
 ```{r, eval = FALSE}
 merged_all <- cbind(merged_subject, merged_y, extracted)
 ```
+The result is a data frame with 10299 rows and 68 columns
 
-# reading the file with activity names and using these names to name the activities in the data set 
+The last "touch" - reading the file with activity names and using these names to name the activities in the data set (converting a numerical column "Activities" into appropriate strings):
+```{r, eval = FALSE}
 activity_labels <- read.table("./activity_labels.txt")
 merged_all$Activity <- activity_labels$V2[merged_y$Activity]
+```
+At this point, a tidy data set is created:
+* each variable is in a separate column
+* each row contains a different observation
+* The variables are labeled with names from the original data. They are sufficiently readable, plus they are described and explained in the codebook.
 
 # creating a tidy data set with the average of each variable for each activity and each subject
 library(reshape2)
