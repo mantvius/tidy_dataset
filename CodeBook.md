@@ -1,7 +1,7 @@
 ## A tidy dataset extracted from Human Activity Recognition Using Smartphones Dataset  
 # **C O D E B O O K**  
 
-The tidy data set contains averages of 66 variables (listed and described below) for 30 subjects and 6 activities.  
+The tidy data set contains averages of 66 variables (listed and described below) for 30 subjects (variable "Subject") and 6 activities (variable "Activity").  
 
 The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set". A full description is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
@@ -124,35 +124,21 @@ fBodyBodyGyroMag-std()
 fBodyBodyGyroJerkMag-mean()  
 fBodyBodyGyroJerkMag-std()  
 
+### 4. Activities performed to transform the data 
 
-
-
-a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data 
-
- indicate all the variables and summaries you calculated, along with units, and any other relevant information?
-
-
-
-
-
+1. The training and test sets were merged together with respective subjects and activities.
+2. The data was labeled with feature names.
+3. Only the measurements on the mean and standard deviation were extracted.
+4. Descriptive activity names were used to name the activities in the data set.
+5. A new data set was created with the average of each variable for each activity and each subject
 
 
 Notes: 
-======
 - Features are normalized and bounded within [-1,1].
 
-
 License:
-========
-Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
 
-[1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+Use of this dataset in publications must be acknowledged by referencing the following publication:
 
+Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
-
-
-```{r, echo=FALSE}
-plot(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
