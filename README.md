@@ -1,5 +1,5 @@
 
-## A tidy dataset extracted from Human Activity Recognition Using Smartphones Dataset
+## A script to create a tidy data set
 
 
 #        **R E A D M E**
