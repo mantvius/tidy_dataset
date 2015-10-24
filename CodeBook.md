@@ -1,20 +1,21 @@
 ## A tidy dataset extracted from Human Activity Recognition Using Smartphones Dataset  
 # **C O D E B O O K**  
+
 The tidy data set contains averages of 66 variables (listed and described below) for 30 subjects and 6 activities.  
 
-The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set".A full description is available at the site where the data was obtained:
+The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set". A full description is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 The zip file with the source data can be retrieved at the following address:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
-1. Subjects and activities.
+### 1. Subjects and activities.
 
 The experiments to collect the original data have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
 
 
-2. Colection of the original data.
+### 2. Colection of the original data.
 
 Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity was captured at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
