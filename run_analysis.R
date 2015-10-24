@@ -5,11 +5,8 @@
 # More info is available in a README file, located at: https://github.com/mantvius/tidy_dataset
 
 # Before starting the script, zip file with original data needs to be downloaded and unpacked.
+# It is also assumed that the unpacked data is in the working directory of R.
 
-# ------------------------
-
-# setting the working directory to where the original data is unpacked.
-setwd("~/UCI HAR Dataset/")
 
 # reading the original data into R
 X_test <- read.table("./test/X_test.txt")
