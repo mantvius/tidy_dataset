@@ -3,10 +3,10 @@
 
 The tidy data set contains averages of 66 variables (listed and described below) for 30 subjects (variable "Subject") and 6 activities (variable "Activity").  
 
-The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set". A full description is available at the site where the data was obtained:
+The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set". A full description is available at the site where the data was obtained:  
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-The zip file with the source data can be retrieved at the following address:
+The zip file with the source data can be retrieved at the following address:  
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
