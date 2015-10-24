@@ -8,7 +8,7 @@
 **run_analysis.R** is a script that creates a tidy data set from "Human Activity Recognition Using Smartphones Data Set". Written in R version 3.2.2 (2015-08-14) on Linux Xubuntu 14.04
 
 
-The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set". The zip file with the source data can be retrieved at the following address:
+The original data source for the tidy dataset is "Human Activity Recognition Using Smartphones Data Set". The zip file with the source data can be retrieved at the following address:  
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 To replicate the script for constructing the tidy dataset, the zip file needs to be downloaded and unpacked in the working directory of R. After that R script can be started.
@@ -30,20 +30,25 @@ feature_names <- read.table("./features.txt")
 colnames(merged_X) <- feature_names$V2
 ```
 
-The labeling is performed before extracting a subset of the data for simplicity (no need to extract a subset of feature names)
-
-
- Extracting only the measurements on the mean and standard deviation
+After that, only the measurements on the mean and standard deviation are extracted (66 out of 561 variables):
+```{r, eval = FALSE}
 extracted <- merged_X[, grep("(mean|std)\\(", colnames(merged_X))]
+```
 
-# merging subjects of train with subjects of test and activities of train with activities of test; labeling them
+The labeling is performed before extracting a subset of the data for simplicity (no need to extract a subset of feature names).
+
+Next step - merging subjects of train with subjects of test and activities of train with activities of test; labeling them appropriatly:
+```{r, eval = FALSE}
 merged_y <- rbind(y_test, y_train)
 merged_subject <- rbind(subject_test, subject_train)
 colnames(merged_y) <- "Activity"
 colnames(merged_subject) <- "Subject"
+```
 
-# merging data set with subjects and activities
+merging the extracted data set with their according subjects and activities:
+```{r, eval = FALSE}
 merged_all <- cbind(merged_subject, merged_y, extracted)
+```
 
 # reading the file with activity names and using these names to name the activities in the data set 
 activity_labels <- read.table("./activity_labels.txt")
