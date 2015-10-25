@@ -85,7 +85,7 @@ The best way to view the the final tidy set is to read it back into R:
 ```{r, eval = FALSE}
 address <- "https://s3.amazonaws.com/coursera-uploads/user-98713875ad60962294962533/975117/asst-3/1a1206807a4111e5bfa091dfd115a3ca.txt"
 address <- sub("^https", "http", address)
-data <- read.table(url(address), header = TRUE, , check.names = FALSE) 
+data <- read.table(url(address), header = TRUE, check.names = FALSE) 
 View(data)
 ```
 
